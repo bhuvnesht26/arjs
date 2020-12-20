@@ -9,18 +9,14 @@
     <title>AR-Sofa</title>
 </head>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
-		<a-sphere src="" radius="1" segments-height="53" color ="blue">
-         <a-animation attribute="scale"
-                      dur="1000"
-                      from="1 1 1"
-                      to ="2 2 2"
-                      direction='alternate-reverse'
-                      easing="ease-in-out-circ"
-                      repeat="indefinite">
-                      </a-animation>
-         <a-sphere>
-		<a-marker-camera preset='kanji'></a-marker-camera>
-	</a-scene>
+	<a-scene embedded arjs=' debugUIEnabled: false; sourceType: webcam;'>
+        <a-marker preset='kanji'>
+          <a-entity 
+              obj-model="obj: url('/assets/Sofa.obj'); 
+              mtl: url('/assets/Sofa.mtl')">
+          </a-entity>
+        </a-marker>
+    <a-entity camera></a-entity>
+    </a-scene>
 </body>
 </html>
